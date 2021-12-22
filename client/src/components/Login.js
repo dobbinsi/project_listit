@@ -41,6 +41,7 @@ const Login = () => {
                 <div>
                     <div className="navbar">
                         <Link to={"/"} className="nav-links">Browse Items</Link>
+                        <Link to={"/"} className="nav-links">My Profile</Link>
                         <Link to={"/"} className="nav-links">New Listing</Link>
                         <Link to={"/"} className="nav-links">Log Out</Link>
                     </div>

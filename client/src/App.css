@@ -79,6 +79,11 @@ body {
   margin-bottom: 40px;
 }
 
+.body-content-logreg h4 {
+  text-align: center;
+  color: #3bf39a;
+}
+
 .form-labels {
   width: 100%;
   display: inline-block;
@@ -127,5 +132,11 @@ body {
   font-style: normal;
   color: white;
   align-items: baseline;
+}
+
+span {
+  color: red;
+  font-weight: bold;
+  font-style: italic;
 }
 

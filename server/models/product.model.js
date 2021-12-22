@@ -17,6 +17,12 @@ const ProductSchema = new mongoose.Schema(
             type: String,
         },
 
+        price: {
+            type: Number,
+            required: [true, "Please set a price"],
+            min: [0, "Price cannot be negative. Give it away for free!"]
+        },
+
         condition:{
             type: String,
             required: [true, "Please select one below"],
@@ -24,7 +30,7 @@ const ProductSchema = new mongoose.Schema(
                 "New",
                 "Used(normal wear)",
                 "For parts",
-                "Other(see description",
+                "Other(see description)",
             ]
         },
 
@@ -42,7 +48,7 @@ const ProductSchema = new mongoose.Schema(
                 "Pet Supplies",
                 "General",
                 "Collectibles/Art",
-                "Business equipment",
+                "Business Equipment",
             ],
         },
 

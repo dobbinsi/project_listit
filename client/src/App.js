@@ -4,6 +4,7 @@ import { Router } from '@reach/router';
 import DisplayAll from './components/DisplayAll';
 import Login from './components/Login';
 import Register from './components/Register';
+import CreateProduct from './components/CreateProduct';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <Router>
         <Login path="/" />
         <Register path="/register" />
-        {/* <DisplayAll /> */}
+        <DisplayAll path="/products/home" />
+        <CreateProduct path="/products/new" />
       </Router>
       <h1>Need cash? Listit!</h1>
     </div>
