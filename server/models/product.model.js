@@ -28,9 +28,9 @@ const ProductSchema = new mongoose.Schema(
             required: [true, "Please select one below"],
             enum:[
                 "New",
-                "Used(normal wear)",
+                "Used (normal wear)",
                 "For parts",
-                "Other(see description)",
+                "Other (see description)",
             ]
         },
 

@@ -23,7 +23,7 @@ const DisplayAll = (props) => {
     }, []);
 
     const deleteProduct = (idFromBelow) => {
-        axios.delete(`http://localhost:8000/api/listProducts/${idFromBelow}`)
+        axios.delete(`http://localhost:8000/api/products/${idFromBelow}`)
             .then((res) => {
                 console.log(res.data);
                 const newList = productList.filter((product, index) => product._id !== idFromBelow);
@@ -68,13 +68,19 @@ const DisplayAll = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="body-main">
+            <div className="body-main-market">
                 {
                     productList.map((product, index) => (
                         <div key={index}>
                             <div className="product-container">
                                 <div className="product-details">
-                                    <h2>{product.title}</h2>
+                                    <Link to={`/products/${product._id}`} className="product-links">
+                                        <img src={product.image} alt="product image" className="thumbnail" />
+                                        <h2>{product.title}</h2>
+                                    </Link>
+                                    <h3>{product.condition}</h3>
+                                    <h3>Price: ${product.price}</h3>
+                                    <Link to={`/products/${product._id}`}><button className="product-buttons">View Product</button></Link>
                                 </div>
                             </div>
                         </div>

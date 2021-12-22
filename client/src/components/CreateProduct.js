@@ -129,9 +129,9 @@ const CreateProduct = (props) => {
                             <select className="login-input" name="condition" value={condition} onChange={(e) => setCondition(e.target.value)} >
                                 <option value="none" defaultValue hidden>Select</option>
                                 <option value="New">New</option>
-                                <option value="Used(normal wear)">Used (normal wear)</option>
+                                <option value="Used (normal wear)">Used (normal wear)</option>
                                 <option value="For parts">For parts</option>
-                                <option value="Other(see description)">Other (see description)</option>
+                                <option value="Other (see description)">Other (see description)</option>
                             </select>
                             {
                                 errors.condition ?

@@ -140,3 +140,71 @@ span {
   font-style: italic;
 }
 
+.body-main-market {
+  background-color: transparent;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  border: 2px solid #3bf39a;
+  background-color: #206899;
+  color: white;
+  min-height: 250px;
+  width: 250px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.product-details {
+  text-align: center;
+}
+
+.product-details h2 {
+  margin-bottom: 10px;
+}
+
+.thumbnail {
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+.product-buttons {
+  background-color: #0303a1;
+  color: antiquewhite;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.product-buttons:hover {
+  background-color: #3bf39a;
+  color: #0303a1;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.product-links {
+  color: white;
+  text-decoration: none;
+  font-style: normal;
+}
+
+.product-links:visited {
+  color: white;
+  text-decoration: none;
+}
+
