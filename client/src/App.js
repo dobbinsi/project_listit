@@ -7,6 +7,7 @@ import Register from './components/Register';
 import CreateProduct from './components/CreateProduct';
 import DisplayOne from './components/DisplayOne';
 import EditProduct from './components/EditProduct';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <CreateProduct path="/products/new" />
         <DisplayOne path="/product/:id"/>
         <EditProduct path="/product/edit/:id"/>
+        <Profile path="/users/:userId"/>
       </Router>
       <h1>Need cash? Listit!</h1>
     </div>

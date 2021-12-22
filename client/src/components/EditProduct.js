@@ -84,7 +84,7 @@ const EditProduct = (props) => {
                 <div>
                     <div className="navbar">
                         <Link to={"/products/home"} className="nav-links">Browse Items</Link>
-                        <Link to={`/users/${userId}`} className="nav-links">My Profile</Link>
+                        <Link to={`/users/${userId}`} className="nav-links">My Products</Link>
                         <Link to={"/products/new"} className="nav-links">New Listing</Link>
                         <Link to={"/"} className="nav-links" onClick={logout} >Log Out</Link>
                     </div>

@@ -7,6 +7,6 @@ module.exports = (app) => {
 
     app.post("/api/users/logout", UserController.logout);
 
-    app.get("/api/users/:id", UserController.getOneUser);
+    app.get("/api/users/:userId", UserController.getOneUser);
     
 };
