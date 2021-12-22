@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #0303a1;
+  background-image: linear-gradient(135deg, #0303a1 68%, #3bf39a 100%);
+  color: antiquewhite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.wrapper {
+  width: 80%;
   min-height: 100vh;
+  margin: auto;
+  padding: 30px;
+  background-color: transparent
+}
+
+.cart-logo {
+  background-color: antiquewhite;
+  border-radius: 50px;
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+}
+
+.header-main {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px 0px;
+  color: antiquewhite;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  font-size: large;
+}
+
+.nav-links {
+  color: antiquewhite;
+  margin-left: 20px;
+  text-decoration: none;
+  font-style: normal;
+  font-size: large;
+}
+
+.nav-links:visited {
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+.body-main {
+  background-color: transparent;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.body-content-logreg {
+  border: 2px solid #3bf39a;
+  background-color: #206899;
   color: white;
+  width: 40%;
+  min-height: 400px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: larger;
 }
 
-.App-link {
-  color: #61dafb;
+.body-content-logreg h1 {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-labels {
+  width: 100%;
+  display: inline-block;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
+
+.login-input {
+  width: 95%;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.hover-button {
+  background-color: #0303a1;
+  color: antiquewhite;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hover-button:hover {
+  background-color: #3bf39a;
+  color: #0303a1;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logreg-links {
+  text-decoration: none;
+  font-style: normal;
+  color: white;
+  align-items: baseline;
+}
+
