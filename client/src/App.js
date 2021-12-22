@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import CreateProduct from './components/CreateProduct';
 import DisplayOne from './components/DisplayOne';
+import EditProduct from './components/EditProduct';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Register path="/register" />
         <DisplayAll path="/products/home" />
         <CreateProduct path="/products/new" />
-        <DisplayOne path="/products/:id"/>
+        <DisplayOne path="/product/:id"/>
+        <EditProduct path="/product/edit/:id"/>
       </Router>
       <h1>Need cash? Listit!</h1>
     </div>

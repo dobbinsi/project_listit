@@ -5,15 +5,15 @@ import logo from "../images/cart_logo.jpg";
 
 const DisplayOne = (props) => {
     const { id } = props;
-    const [product, setProduct] = useState([]);
+    const [oneProduct, setOneProduct] = useState({});
     const [userId, setUserId] = useState("");
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/products/${id}`)
+        axios.get(`http://localhost:8000/api/product/${id}`)
             .then((res) => {
                 console.log(res);
                 console.log(res.data);
-                setProduct(res.data);
+                setOneProduct(res.data);
             })
             .catch((err) => console.log(err));
     }, []);
@@ -23,17 +23,18 @@ const DisplayOne = (props) => {
         console.log(localStorage.getItem("userId"));
     }, []);
 
-    // const deleteProduct = (idFromBelow) => {
-    //     axios.delete(`http://localhost:8000/api/products/${idFromBelow}`)
-    //         .then((res) => {
-    //             console.log(res.data);
-    //             const newList = productList.filter((product, index) => product._id !== idFromBelow);
-    //             setProductList(newList);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         })
-    // };
+    const deleteHandler = () => {
+        axios.delete(`http://localhost:8000/api/product/${id}`)
+            .then((res) => {
+                console.log(res);
+                console.log(res.data);
+                navigate("/products/home");
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    };
+
 
     const logout = (e) => {
         e.preventDefault();
@@ -69,10 +70,26 @@ const DisplayOne = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="">
-                helloooooooo
+            <div className="body-main">
                 {
-                    <h1>{product.title}</h1>
+                    <div className="product-container-big">
+                        <div className="product-details-big">
+                            <h1>{oneProduct.title}</h1>
+                            <img src={oneProduct.image} alt="product image" />
+                            <h2>Price:</h2>
+                            <h2>${oneProduct.price}</h2>
+                            <div className="detail-description">
+                                <h3>Product Description:</h3>
+                                <p>{oneProduct.description}</p>
+                                <h3 className="condition">Condition:</h3>
+                                <p>{oneProduct.condition}</p>
+                            </div>
+                            <div>
+                            <Link to={`/product/edit/${oneProduct._id}`}><button className="product-buttons">Edit Product</button></Link>
+                                <button className="product-buttons" onClick={deleteHandler}>Remove Listing</button>
+                            </div>
+                        </div>
+                    </div>
                 }
             </div>
         </div>

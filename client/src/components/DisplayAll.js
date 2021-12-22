@@ -74,13 +74,13 @@ const DisplayAll = (props) => {
                         <div key={index}>
                             <div className="product-container">
                                 <div className="product-details">
-                                    <Link to={`/products/${product._id}`} className="product-links">
+                                    <Link to={`/product/${product._id}`} className="product-links">
                                         <img src={product.image} alt="product image" className="thumbnail" />
                                         <h2>{product.title}</h2>
                                     </Link>
-                                    <h3>{product.condition}</h3>
+                                    <h3>{product.categories}</h3>
                                     <h3>Price: ${product.price}</h3>
-                                    <Link to={`/products/${product._id}`}><button className="product-buttons">View Product</button></Link>
+                                    <Link to={`/product/${product._id}`}><button className="product-buttons">View Product</button></Link>
                                 </div>
                             </div>
                         </div>
