@@ -8,9 +8,11 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const [user, setUser] = useState("")
     const login = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:8000/api/users/login",
+        const user = { email, password };
+        const response = axios.post("http://localhost:8000/api/users/login",
             {
                 email: email,
                 password: password,
@@ -21,6 +23,7 @@ const Login = () => {
         )
             .then((res) => {
                 console.log(res.data);
+                setUser(res.data);
                 console.log(res.data.userId);
                 localStorage.setItem("userId", res.data.userId);
                 navigate("/products/home");
@@ -30,6 +33,8 @@ const Login = () => {
                 setErrorMessage(err.response.data.message);
             });
     };
+
+
 
     return (
         <div>
