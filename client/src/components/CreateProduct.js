@@ -104,7 +104,7 @@ const CreateProduct = (props) => {
                         </div>
                         <div className="logregform">
                             <label className="form-labels">Category:</label>
-                            <select className="login-input" name="categories" value={categories} onChange={(e) => setCategories(e.target.value)} >
+                            <select className="create-dropdown" name="categories" value={categories} onChange={(e) => setCategories(e.target.value)} >
                                 <option value="none" defaultValue hidden>Select</option>
                                 <option value="Electronics/Media">Electronics/Media</option>
                                 <option value="Home/Garden">Home/Garden</option>
@@ -126,7 +126,7 @@ const CreateProduct = (props) => {
                         </div>
                         <div className="logregform">
                             <label className="form-labels">Condition:</label>
-                            <select className="login-input" name="condition" value={condition} onChange={(e) => setCondition(e.target.value)} >
+                            <select className="create-dropdown" name="condition" value={condition} onChange={(e) => setCondition(e.target.value)} >
                                 <option value="none" defaultValue hidden>Select</option>
                                 <option value="New">New</option>
                                 <option value="Used (normal wear)">Used (normal wear)</option>

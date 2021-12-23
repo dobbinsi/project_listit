@@ -76,26 +76,33 @@ const Profile = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="body-main-market">
-                {/* <h1>{oneUser.username}'s Listings</h1> */}
-                {
-                    userProductList.map((product, index) => (
-                        <div key={index}>
-                            <div className="product-container">
-                                <div className="product-details">
-                                    <Link to={`/product/${product._id}`} className="product-links">
-                                        <img src={product.image} alt="product image" className="thumbnail" />
-                                        <h2>{product.title}</h2>
-                                    </Link>
-                                    <h3>{product.categories}</h3>
-                                    <h3>Price: ${product.price}</h3>
-                                    <Link to={`/product/${product._id}`}><button className="product-buttons">View Product</button></Link>
+            {
+                userProductList.length >= 1 ?
+                    <div className="body-main-market">
+                        {
+                            userProductList.map((product, index) => (
+                                <div key={index}>
+                                    <div className="product-container">
+                                        <div className="product-details">
+                                            <Link to={`/product/${product._id}`} className="product-links">
+                                                <img src={product.image} alt="product image" className="thumbnail" />
+                                                <h2>{product.title}</h2>
+                                            </Link>
+                                            <h3>{product.categories}</h3>
+                                            <h3>Price: ${product.price}</h3>
+                                            <Link to={`/product/${product._id}`}><button className="product-buttons">View Product</button></Link>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            ))
+                        }
+                    </div>
+                    : <div className="body-main-market">
+                        <div className="nothing-listed">
+                            <h1>You don't have any products listed for sale. List something and start earning today!</h1>
                         </div>
-                    ))
-                }
-            </div>
+                    </div>
+            }
         </div>
     )
 }

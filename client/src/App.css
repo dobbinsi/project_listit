@@ -99,6 +99,14 @@ body {
   margin-bottom: 20px;
 }
 
+.create-dropdown {
+  width: 100%;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
 .center-button {
   display: flex;
   justify-content: center;
@@ -145,7 +153,7 @@ span {
   min-height: 100vh;
   padding: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-wrap: wrap;
   align-content:flex-start;
 }
@@ -192,6 +200,18 @@ span {
   width: 80%;
   border-radius: 10px;
   padding: 10px 10px 0px 10px;
+  text-align: center;
+}
+
+.nothing-listed {
+  margin: auto;
+  margin-top: 80px;
+  background-color: antiquewhite;
+  color: #0303a1;
+  border: 2px solid #3bf39a;
+  width: 80%;
+  border-radius: 10px;
+  padding: 20px;
   text-align: center;
 }
 
