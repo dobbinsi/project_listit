@@ -217,6 +217,7 @@ span {
   height: 150px;
   width: 150px;
   border-radius: 10px;
+  border: 2px solid #0303a1;
 }
 
 .product-buttons {

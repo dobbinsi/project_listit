@@ -85,8 +85,16 @@ const DisplayOne = (props) => {
                                 <p>{oneProduct.condition}</p>
                             </div>
                             <div>
-                            <Link to={`/product/edit/${oneProduct._id}`}><button className="product-buttons">Edit Product</button></Link>
-                                <button className="product-buttons" onClick={deleteHandler}>Remove Listing</button>
+                                {
+                                    oneProduct.createdBy === userId ?
+                                        <div>
+                                            <Link to={`/product/edit/${oneProduct._id}`}><button className="product-buttons">Edit Product</button></Link>
+                                            <button className="product-buttons" onClick={deleteHandler}>Remove Listing</button>
+                                        </div>
+                                        : <div>
+                                            <a href={`mailto:${oneProduct.createdBy?.email}`}><button className="product-buttons">Contact Seller</button></a>
+                                        </div>
+                                }
                             </div>
                         </div>
                     </div>
