@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { Link, navigate } from "@reach/router";
-import logo from "../images/cart_logo.jpg";
-
+import Header from './Header';
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
-    const [user, setUser] = useState("")
     const login = (event) => {
         event.preventDefault();
-        const user = { email, password };
-        const response = axios.post("http://localhost:8000/api/users/login",
+        axios.post("http://localhost:8000/api/users/login",
             {
                 email: email,
                 password: password,
@@ -23,7 +20,6 @@ const Login = () => {
         )
             .then((res) => {
                 console.log(res.data);
-                setUser(res.data);
                 console.log(res.data.userId);
                 localStorage.setItem("userId", res.data.userId);
                 navigate("/products/home");
@@ -34,24 +30,18 @@ const Login = () => {
             });
     };
 
-
-
     return (
         <div>
-            <div className="header-main">
-                <div className="brand-logo">
-                    <img src={logo} className='cart-logo' />
-                    <h1>Project Listit</h1>
-                </div>
-                <div>
-                    <div className="navbar">
-                        <Link to={"/"} className="nav-links">Browse Items</Link>
-                        <Link to={"/"} className="nav-links">My Products</Link>
-                        <Link to={"/"} className="nav-links">New Listing</Link>
-                        <Link to={"/"} className="nav-links">Log Out</Link>
-                    </div>
-                </div>
-            </div>
+            <Header 
+            linkOne={"/"}
+            textOne={"Browse Items"}
+            linkTwo={"/"}
+            textTwo={"My Products"}
+            linkThree={"/"}
+            textThree={"New Listing"}
+            linkFour={"/"}
+            textFour={"Log Out"}
+            />
             <div className="body-main">
                 <div className="body-content-logreg">
                     <h1>Login</h1>

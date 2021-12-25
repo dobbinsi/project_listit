@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link, navigate } from "@reach/router";
-import logo from "../images/cart_logo.jpg";
-
+import { Link } from "@reach/router";
+import Header from "./Header";
 
 const Register = (props) => {
     const [confirmReg, setConfirmReg] = useState("");
@@ -47,20 +46,16 @@ const Register = (props) => {
 
     return (
         <div>
-            <div className="header-main">
-                <div className="brand-logo">
-                    <img src={logo} className='cart-logo' />
-                    <h1>Project Listit</h1>
-                </div>
-                <div>
-                    <div className="navbar">
-                        <Link to={"/"} className="nav-links">Browse Items</Link>
-                        <Link to={"/"} className="nav-links">My Products</Link>
-                        <Link to={"/"} className="nav-links">New Listing</Link>
-                        <Link to={"/"} className="nav-links">Log Out</Link>
-                    </div>
-                </div>
-            </div>
+            <Header 
+            linkOne={"/"}
+            textOne={"Browse Items"}
+            linkTwo={"/"}
+            textTwo={"My Products"}
+            linkThree={"/"}
+            textThree={"New Listing"}
+            linkFour={"/"}
+            textFour={"Log Out"}
+            />
             <div className="body-main">
                 <div className="body-content-logreg">
                     <h1>Register</h1>
