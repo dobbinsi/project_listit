@@ -16,7 +16,7 @@ const DisplayOne = (props) => {
                 setOneProduct(res.data);
             })
             .catch((err) => console.log(err));
-    }, []);
+    }, [id]);
 
     useEffect(() => {
         setUserId(localStorage.getItem("userId"));
@@ -37,22 +37,22 @@ const DisplayOne = (props) => {
 
     return (
         <div>
-            <Header 
-            linkOne={"/products/home"}
-            textOne={"Browse Items"}
-            linkTwo={`/users/${userId}`}
-            textTwo={"My Products"}
-            linkThree={"/products/new"}
-            textThree={"New Listing"}
-            linkFour={"/"}
-            textFour={"Log Out"}
+            <Header
+                linkOne={"/products/home"}
+                textOne={"Browse Items"}
+                linkTwo={`/users/${userId}`}
+                textTwo={"My Products"}
+                linkThree={"/products/new"}
+                textThree={"New Listing"}
+                linkFour={"/"}
+                textFour={"Log Out"}
             />
             <div className="body-main">
                 {
                     <div className="product-container-big">
                         <div className="product-details-big">
                             <h1>{oneProduct.title}</h1>
-                            <img src={oneProduct.image} alt="product image" />
+                            <img src={oneProduct.image} alt="product" />
                             <h2>Price:</h2>
                             <h2>${oneProduct.price}</h2>
                             <div className="detail-description">
@@ -63,7 +63,7 @@ const DisplayOne = (props) => {
                             </div>
                             <div>
                                 {
-                                    oneProduct.createdBy === userId ?
+                                    oneProduct.createdBy?._id === userId ?
                                         <div>
                                             <Link to={`/product/edit/${oneProduct._id}`}><button className="product-buttons">Edit Product</button></Link>
                                             <button className="product-buttons" onClick={deleteHandler}>Remove Listing</button>

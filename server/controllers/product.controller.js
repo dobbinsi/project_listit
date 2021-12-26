@@ -6,7 +6,7 @@ module.exports = {
 
     findAllProducts: (req, res) =>{
         Product.find({})
-            .populate("createdBy", "username _id")
+            .populate("createdBy", "username _id email")
             .then((allProducts)=>{
                 console.log(allProducts);
                 res.json(allProducts)
@@ -16,7 +16,6 @@ module.exports = {
                 res.json({message: "Something went wrong in findAllProducts", error: err})
             })
     },
-
 
     findAllProductsByUser: (req, res)=>{
         Product.find({ createdBy: req.params.userId})
@@ -28,11 +27,11 @@ module.exports = {
             console.log(err);
             res.status(400).json(err);
         })
-
     },
 
     findOneProduct: (req, res) =>{
         Product.findOne({_id: req.params.id})
+            .populate("createdBy", "_id email")
             .then((oneProduct)=>{
                 console.log(oneProduct);
                 res.json(oneProduct)
@@ -43,18 +42,12 @@ module.exports = {
             })
     },
 
-
-    //create new product with user login
     createNewProduct: (req, res) =>{
         const newProductObj = new Product(req.body);
-
         const decodedJWT = jwt.decode(req.cookies.usertoken,{
             complete: true
         })
-
-
         newProductObj.createdBy = decodedJWT.payload.id;
-
         newProductObj.save()
             .then((newProduct) => {
                 console.log(newProduct);
@@ -65,8 +58,6 @@ module.exports = {
                 res.status(400).json(err);
             });
     },
-
-
 
     updateProduct: (req, res) =>{
         Product.findOneAndUpdate(
@@ -84,7 +75,6 @@ module.exports = {
             })
     },
 
-
     deleteProduct: (req, res) =>{
         Product.deleteOne({_id: req.params.id})
             .then((deletedProduct)=>{
@@ -96,6 +86,5 @@ module.exports = {
                 res.json({ message: 'Something went wrong in deleteProduct', error: err });
             })
     },
-
 }
 

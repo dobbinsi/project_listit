@@ -11,9 +11,9 @@ app.post("/api/products", authenticate, ProductController.createNewProduct);
 
 app.get("/api/product/:id", ProductController.findOneProduct);
 
-app.put("/api/product/:id", ProductController.updateProduct);
+app.put("/api/product/:id", authenticate, ProductController.updateProduct);
 
-app.delete("/api/product/:id", ProductController.deleteProduct);
+app.delete("/api/product/:id", authenticate, ProductController.deleteProduct);
 
 app.get("/api/user/products/:userId", ProductController.findAllProductsByUser,);
 
