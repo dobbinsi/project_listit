@@ -24,7 +24,8 @@ const DisplayOne = (props) => {
     }, []);
 
     const deleteHandler = () => {
-        axios.delete(`http://localhost:8000/api/product/${id}`)
+        axios.delete(`http://localhost:8000/api/product/${id}`,
+            { withCredentials: true })
             .then((res) => {
                 console.log(res);
                 console.log(res.data);
@@ -60,6 +61,8 @@ const DisplayOne = (props) => {
                                 <p>{oneProduct.description}</p>
                                 <h3 className="condition">Condition:</h3>
                                 <p>{oneProduct.condition}</p>
+                                <h3>Location:</h3>
+                                <iframe src={`https://www.google.com/maps/embed/v1/place?q=${oneProduct.location}&key=AIzaSyBDUudCjck-7dXoEj8Zy-volQOkjnVglho`}></iframe>
                             </div>
                             <div>
                                 {

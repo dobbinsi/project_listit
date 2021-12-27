@@ -15,6 +15,7 @@ const EditProduct = (props) => {
         condition:"",
         categories:"",
         price:"",
+        location:"",
     });
     
     useEffect(() => {
@@ -30,7 +31,8 @@ const EditProduct = (props) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:8000/api/product/${id}`, updatedProduct)
+        axios.put(`http://localhost:8000/api/product/${id}`, updatedProduct,
+            { withCredentials: true })
             .then((res) => {
                 console.log(res.data);
                 navigate(`/product/${id}`);

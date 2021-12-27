@@ -86,6 +86,15 @@ const Form = (props) => {
                             : null
                     }
                 </div>
+                <div className="logregform">
+                    <label className="form-labels">Location (ZIP Code):</label>
+                    <input className="login-input" type="text" name="location" value={product.location} onChange={onChangeHandler} />
+                    {
+                        errors.price ?
+                            <span>{errors.price.message}</span>
+                            : null
+                    }
+                </div>
                 <div className="center-button">
                     <button class="hover-button" type="submit">{buttonText}</button>
                 </div>

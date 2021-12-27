@@ -14,6 +14,7 @@ const CreateProduct = (props) => {
         condition:"",
         categories:"",
         price:"",
+        location:"",
     });
 
     const createSubmitHandler = (e) => {
@@ -55,7 +56,7 @@ const CreateProduct = (props) => {
                     product={newProduct}
                     setProduct={setNewProduct}
                     errors={errors}
-                    buttonText={"List It!"}
+                    buttonText={"Listit!"}
                     />
                 </div>
             </div>

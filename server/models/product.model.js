@@ -17,6 +17,12 @@ const ProductSchema = new mongoose.Schema(
             type: String,
         },
 
+        location: {
+            type: String,
+            required: [true, "Location is required!"],
+            minLength: [ 5, "ZIP code must be at least 5 digits", ],
+        },
+
         price: {
             type: Number,
             required: [true, "Please set a price"],
