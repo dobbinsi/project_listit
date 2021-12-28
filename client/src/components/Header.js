@@ -3,10 +3,9 @@ import axios from "axios";
 import logo from "../images/cart_logo.jpg";
 import { Link, navigate } from "@reach/router";
 
-
 const Header = (props) => {
-    const {linkOne, textOne, linkTwo, textTwo, linkThree, textThree, linkFour, textFour} = props;
-    
+    const { linkOne, textOne, linkTwo, textTwo, linkThree, textThree, linkFour, textFour } = props;
+
     const logout = (e) => {
         e.preventDefault();
         axios.post("http://localhost:8000/api/users/logout",
@@ -16,7 +15,6 @@ const Header = (props) => {
             },
         )
             .then((res) => {
-                console.log(res.data);
                 localStorage.removeItem("userId");
                 navigate("/");
             })
@@ -24,7 +22,7 @@ const Header = (props) => {
                 console.log(err);
             });
     };
-    
+
     return (
         <div className="header-main">
             <div className="brand-logo">

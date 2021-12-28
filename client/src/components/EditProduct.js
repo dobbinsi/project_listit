@@ -9,19 +9,18 @@ const EditProduct = (props) => {
     const [errors, setErrors] = useState({});
     const [userId, setUserId] = useState("");
     const [updatedProduct, setUpdatedProduct] = useState({
-        title:"",
-        image:"",
-        description:"",
-        condition:"",
-        categories:"",
-        price:"",
-        location:"",
+        title: "",
+        image: "",
+        description: "",
+        condition: "",
+        categories: "",
+        price: "",
+        location: "",
     });
-    
+
     useEffect(() => {
         axios.get(`http://localhost:8000/api/product/${id}`)
             .then((res) => {
-                console.log(res.data);
                 setUpdatedProduct(res.data);
             })
             .catch((err) => {
@@ -34,7 +33,6 @@ const EditProduct = (props) => {
         axios.put(`http://localhost:8000/api/product/${id}`, updatedProduct,
             { withCredentials: true })
             .then((res) => {
-                console.log(res.data);
                 navigate(`/product/${id}`);
             })
             .catch((err) => {
@@ -45,30 +43,29 @@ const EditProduct = (props) => {
 
     useEffect(() => {
         setUserId(localStorage.getItem("userId", userId));
-        console.log(localStorage.getItem("userId"));
     }, []);
 
     return (
         <div>
-            <Header 
-            linkOne={"/products/home"}
-            textOne={"Browse Items"}
-            linkTwo={`/users/${userId}`}
-            textTwo={"My Products"}
-            linkThree={"/products/new"}
-            textThree={"New Listing"}
-            linkFour={"/"}
-            textFour={"Log Out"}
+            <Header
+                linkOne={"/products/home"}
+                textOne={"Browse Items"}
+                linkTwo={`/users/${userId}`}
+                textTwo={"My Products"}
+                linkThree={"/products/new"}
+                textThree={"New Listing"}
+                linkFour={"/"}
+                textFour={"Log Out"}
             />
             <div className="body-main">
                 <div className="body-content-logreg">
                     <h1>Edit Product Details</h1>
-                    <Form 
-                    submitHandler={submitHandler}
-                    product={updatedProduct}
-                    setProduct={setUpdatedProduct}
-                    errors={errors}
-                    buttonText={"Submit Changes!"}
+                    <Form
+                        submitHandler={submitHandler}
+                        product={updatedProduct}
+                        setProduct={setUpdatedProduct}
+                        errors={errors}
+                        buttonText={"Submit Changes!"}
                     />
                 </div>
             </div>

@@ -1,11 +1,10 @@
 import React from 'react';
 
-
 const Form = (props) => {
     const { submitHandler, product, setProduct, errors, buttonText } = props;
 
     const onChangeHandler = (e) => {
-        const newStateObject = {...product};
+        const newStateObject = { ...product };
         newStateObject[e.target.name] = e.target.value;
         setProduct(newStateObject);
     };

@@ -8,13 +8,13 @@ const CreateProduct = (props) => {
     const [errors, setErrors] = useState({});
     const [userId, setUserId] = useState("");
     const [newProduct, setNewProduct] = useState({
-        title:"",
-        image:"",
-        description:"",
-        condition:"",
-        categories:"",
-        price:"",
-        location:"",
+        title: "",
+        image: "",
+        description: "",
+        condition: "",
+        categories: "",
+        price: "",
+        location: "",
     });
 
     const createSubmitHandler = (e) => {
@@ -22,7 +22,6 @@ const CreateProduct = (props) => {
         axios.post(`http://localhost:8000/api/products`, newProduct,
             { withCredentials: true })
             .then((res) => {
-                console.log(res.data);
                 navigate("/products/home");
             })
             .catch((err) => {
@@ -33,30 +32,29 @@ const CreateProduct = (props) => {
 
     useEffect(() => {
         setUserId(localStorage.getItem("userId", userId));
-        console.log(localStorage.getItem("userId"));
     }, []);
 
     return (
         <div>
-            <Header 
-            linkOne={"/products/home"}
-            textOne={"Browse Items"}
-            linkTwo={`/users/${userId}`}
-            textTwo={"My Products"}
-            linkThree={"/products/new"}
-            textThree={"New Listing"}
-            linkFour={"/"}
-            textFour={"Log Out"}
+            <Header
+                linkOne={"/products/home"}
+                textOne={"Browse Items"}
+                linkTwo={`/users/${userId}`}
+                textTwo={"My Products"}
+                linkThree={"/products/new"}
+                textThree={"New Listing"}
+                linkFour={"/"}
+                textFour={"Log Out"}
             />
             <div className="body-main">
                 <div className="body-content-logreg">
                     <h1>New Listing</h1>
-                    <Form 
-                    submitHandler={createSubmitHandler}
-                    product={newProduct}
-                    setProduct={setNewProduct}
-                    errors={errors}
-                    buttonText={"Listit!"}
+                    <Form
+                        submitHandler={createSubmitHandler}
+                        product={newProduct}
+                        setProduct={setNewProduct}
+                        errors={errors}
+                        buttonText={"Listit!"}
                     />
                 </div>
             </div>

@@ -11,7 +11,6 @@ const Profile = (props) => {
     useEffect(() => {
         axios.get(`http://localhost:8000/api/user/products/${userId}`)
             .then((res) => {
-                console.log(res.data);
                 setUserProductList(res.data);
             })
             .catch((err) => {
@@ -22,7 +21,6 @@ const Profile = (props) => {
     useEffect(() => {
         axios.get(`http://localhost:8000/api/users/${userId}`)
             .then((res) => {
-                console.log(res.data);
                 setOneUser(res.data);
             })
             .catch((err) => {
@@ -32,15 +30,15 @@ const Profile = (props) => {
 
     return (
         <div>
-            <Header 
-            linkOne={"/products/home"}
-            textOne={"Browse Items"}
-            linkTwo={`/users/${userId}`}
-            textTwo={"My Products"}
-            linkThree={"/products/new"}
-            textThree={"New Listing"}
-            linkFour={"/"}
-            textFour={"Log Out"}
+            <Header
+                linkOne={"/products/home"}
+                textOne={"Browse Items"}
+                linkTwo={`/users/${userId}`}
+                textTwo={"My Products"}
+                linkThree={"/products/new"}
+                textThree={"New Listing"}
+                linkFour={"/"}
+                textFour={"Log Out"}
             />
             {
                 userProductList.length >= 1 ?

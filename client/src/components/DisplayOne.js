@@ -13,8 +13,6 @@ const DisplayOne = (props) => {
     useEffect(() => {
         axios.get(`http://localhost:8000/api/product/${id}`)
             .then((res) => {
-                console.log(res);
-                console.log(res.data);
                 setOneProduct(res.data);
             })
             .catch((err) => console.log(err));
@@ -22,15 +20,12 @@ const DisplayOne = (props) => {
 
     useEffect(() => {
         setUserId(localStorage.getItem("userId"));
-        console.log(localStorage.getItem("userId"));
     }, []);
 
     const deleteHandler = () => {
         axios.delete(`http://localhost:8000/api/product/${id}`,
             { withCredentials: true })
             .then((res) => {
-                console.log(res);
-                console.log(res.data);
                 navigate("/products/home");
             })
             .catch((err) => {

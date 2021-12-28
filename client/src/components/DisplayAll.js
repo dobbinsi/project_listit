@@ -10,8 +10,6 @@ const DisplayAll = (props) => {
     useEffect(() => {
         axios.get("http://localhost:8000/api/products")
             .then((res) => {
-                console.log(res);
-                console.log(res.data);
                 setProductList(res.data);
             })
             .catch((err) => console.log(err));
@@ -19,13 +17,11 @@ const DisplayAll = (props) => {
 
     useEffect(() => {
         setUserId(localStorage.getItem("userId"));
-        console.log(localStorage.getItem("userId"));
     }, []);
 
     const deleteProduct = (idFromBelow) => {
         axios.delete(`http://localhost:8000/api/products/${idFromBelow}`)
             .then((res) => {
-                console.log(res.data);
                 const newList = productList.filter((product, index) => product._id !== idFromBelow);
                 setProductList(newList);
             })
@@ -36,15 +32,15 @@ const DisplayAll = (props) => {
 
     return (
         <div>
-            <Header 
-            linkOne={"/products/home"}
-            textOne={"Browse Items"}
-            linkTwo={`/users/${userId}`}
-            textTwo={"My Products"}
-            linkThree={"/products/new"}
-            textThree={"New Listing"}
-            linkFour={"/"}
-            textFour={"Log Out"}
+            <Header
+                linkOne={"/products/home"}
+                textOne={"Browse Items"}
+                linkTwo={`/users/${userId}`}
+                textTwo={"My Products"}
+                linkThree={"/products/new"}
+                textThree={"New Listing"}
+                linkFour={"/"}
+                textFour={"Log Out"}
             />
             <div className="body-main-market">
                 {

@@ -26,7 +26,6 @@ const Register = (props) => {
             },
         )
             .then((res) => {
-                console.log("res.data", res.data);
                 setUser({
                     username: "",
                     email: "",
@@ -46,15 +45,15 @@ const Register = (props) => {
 
     return (
         <div>
-            <Header 
-            linkOne={"/"}
-            textOne={"Browse Items"}
-            linkTwo={"/"}
-            textTwo={"My Products"}
-            linkThree={"/"}
-            textThree={"New Listing"}
-            linkFour={"/"}
-            textFour={"Log Out"}
+            <Header
+                linkOne={"/"}
+                textOne={"Browse Items"}
+                linkTwo={"/"}
+                textTwo={"My Products"}
+                linkThree={"/"}
+                textThree={"New Listing"}
+                linkFour={"/"}
+                textFour={"Log Out"}
             />
             <div className="body-main">
                 <div className="body-content-logreg">

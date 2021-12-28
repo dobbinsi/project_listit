@@ -19,8 +19,6 @@ const Login = () => {
             },
         )
             .then((res) => {
-                console.log(res.data);
-                console.log(res.data.userId);
                 localStorage.setItem("userId", res.data.userId);
                 navigate("/products/home");
             })
@@ -32,15 +30,15 @@ const Login = () => {
 
     return (
         <div>
-            <Header 
-            linkOne={"/"}
-            textOne={"Browse Items"}
-            linkTwo={"/"}
-            textTwo={"My Products"}
-            linkThree={"/"}
-            textThree={"New Listing"}
-            linkFour={"/"}
-            textFour={"Log Out"}
+            <Header
+                linkOne={"/"}
+                textOne={"Browse Items"}
+                linkTwo={"/"}
+                textTwo={"My Products"}
+                linkThree={"/"}
+                textThree={"New Listing"}
+                linkFour={"/"}
+                textFour={"Log Out"}
             />
             <div className="body-main">
                 <div className="body-content-logreg">
