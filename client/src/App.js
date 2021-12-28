@@ -9,6 +9,7 @@ import DisplayOne from './components/DisplayOne';
 import EditProduct from './components/EditProduct';
 import Profile from './components/Profile';
 
+
 function App() {
   return (
     <div className='wrapper'>

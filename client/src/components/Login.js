@@ -56,7 +56,7 @@ const Login = () => {
                             <span>{errorMessage ? errorMessage : ""}</span>
                         </div>
                         <div className="center-button">
-                            <button class="hover-button" type="submit">Login!</button>
+                            <button className="hover-button" type="submit">Login!</button>
                         </div>
                     </form>
                     <Link to={"/register"} className="logreg-links">New user? Register now!</Link>

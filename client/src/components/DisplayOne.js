@@ -7,6 +7,8 @@ const DisplayOne = (props) => {
     const { id } = props;
     const [oneProduct, setOneProduct] = useState({});
     const [userId, setUserId] = useState("");
+    const jawn = process.env.REACT_APP_JAWN;
+    // ^^ not secure but fine for this use case
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/product/${id}`)
@@ -62,7 +64,7 @@ const DisplayOne = (props) => {
                                 <h3 className="condition">Condition:</h3>
                                 <p>{oneProduct.condition}</p>
                                 <h3>Location:</h3>
-                                <iframe src={`https://www.google.com/maps/embed/v1/place?q=${oneProduct.location}&key=AIzaSyBDUudCjck-7dXoEj8Zy-volQOkjnVglho`}></iframe>
+                                <iframe src={`https://www.google.com/maps/embed/v1/place?q=${oneProduct.location}&key=${jawn}`}></iframe>
                             </div>
                             <div>
                                 {
