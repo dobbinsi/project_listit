@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "@reach/router";
+import { NavLink as Link } from "react-router-dom";
 import Header from "./Header";
+
 
 const DisplayAll = (props) => {
     const [productList, setProductList] = useState([]);
@@ -18,17 +19,6 @@ const DisplayAll = (props) => {
     useEffect(() => {
         setUserId(localStorage.getItem("userId"));
     }, []);
-
-    const deleteProduct = (idFromBelow) => {
-        axios.delete(`http://localhost:8000/api/products/${idFromBelow}`)
-            .then((res) => {
-                const newList = productList.filter((product, index) => product._id !== idFromBelow);
-                setProductList(newList);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    };
 
     return (
         <div>

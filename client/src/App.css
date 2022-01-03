@@ -14,7 +14,7 @@ body {
 
 .wrapper {
   width: 80%;
-  min-height: 100vh;
+  min-height: 90vh;
   margin: auto;
   padding: 30px;
   background-color: transparent
@@ -26,6 +26,7 @@ body {
   height: 60px;
   width: 60px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .header-main {
@@ -36,11 +37,39 @@ body {
   color: antiquewhite;
 }
 
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .brand-logo {
   display: flex;
   align-items: center;
-  font-size: large;
 }
+
+.navbar-logo {
+  color: antiquewhite;
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+  min-width: fit-content;
+}
+
+
+.nav-menu {
+  display: grid;
+  justify-content: end;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  margin-right: 2rem;
+}
+
 
 .nav-links {
   color: antiquewhite;
@@ -54,6 +83,127 @@ body {
   color: antiquewhite;
   text-decoration: none;
 }
+
+.nav-links:hover {
+  background-color: #1888ff;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+
+
+.fa-bars {
+  color: antiquewhite;
+}
+
+.fa-times {
+  color: antiquewhite;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+
+@media screen and (max-width: 960px) {
+  .NavbarItems {
+    position: relative;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-menu.active {
+    background: #242222;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-links:hover {
+    background-color: #1888ff;
+    border-radius: 0;
+  }
+
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .fa-times {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .nav-links-mobile {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+    background: #1888ff;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
+  .nav-links-mobile:hover {
+    background: #fff;
+    color: #1888ff;
+    transition: 250ms;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .body-main {
   background-color: transparent;
@@ -143,7 +293,7 @@ body {
 }
 
 span {
-  color: red;
+  color: #9e2222;
   font-weight: bold;
   font-style: italic;
 }
@@ -155,7 +305,7 @@ span {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  align-content:flex-start;
+  align-content: flex-start;
 }
 
 .product-container {

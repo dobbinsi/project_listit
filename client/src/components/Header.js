@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from "axios";
 import logo from "../images/cart_logo.jpg";
-import { Link, navigate } from "@reach/router";
+import { NavLink as Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+
 
 const Header = (props) => {
     const { linkOne, textOne, linkTwo, textTwo, linkThree, textThree, linkFour, textFour } = props;
+    const [click, setClick] = useState(false);
+    const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
+    const navigate = useNavigate();
 
     const logout = (e) => {
         e.preventDefault();
@@ -25,18 +31,41 @@ const Header = (props) => {
 
     return (
         <div className="header-main">
-            <div className="brand-logo">
-                <img src={logo} className='cart-logo' alt='cart-logo' />
-                <h1>Project Listit</h1>
-            </div>
-            <div>
-                <div className="navbar">
-                    <Link to={linkOne} className="nav-links">{textOne}</Link>
-                    <Link to={linkTwo} className="nav-links">{textTwo}</Link>
-                    <Link to={linkThree} className="nav-links">{textThree}</Link>
-                    <Link to={linkFour} className="nav-links" onClick={logout} >{textFour}</Link>
+            <nav className='navbar'>
+                <div className='brand-logo'>
+                    <Link to={linkOne} className="navbar-logo">
+                        <img src={logo} className='cart-logo' alt='cart-logo' />
+                    </Link>
+                    <Link to={linkOne} className="navbar-logo">
+                        <h1>Project Listit</h1>
+                    </Link>
                 </div>
-            </div>
+                <div className='menu-icon' onClick={handleClick}>
+                    <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+                </div>
+                <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                    <li className='nav-item'>
+                        <Link to={linkOne} className='nav-links' onClick={closeMobileMenu}>
+                            {textOne}
+                        </Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link to={linkTwo} className='nav-links' onClick={closeMobileMenu}>
+                            {textTwo}
+                        </Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link to={linkThree} className='nav-links' onClick={closeMobileMenu}>
+                            {textThree}
+                        </Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link to={linkFour} className='nav-links' onClick={logout}>
+                            {textFour}
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
         </div>
     )
 }

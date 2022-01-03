@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { navigate } from "@reach/router";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Header from "./Header";
 import Form from "./Form";
 
-const EditProduct = (props) => {
-    const { id } = props;
+
+const EditProduct = () => {
+    const { id } = useParams();
     const [errors, setErrors] = useState({});
     const [userId, setUserId] = useState("");
+    const navigate = useNavigate();
+
     const [updatedProduct, setUpdatedProduct] = useState({
         title: "",
         image: "",

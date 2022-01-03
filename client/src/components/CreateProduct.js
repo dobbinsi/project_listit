@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { navigate } from "@reach/router";
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Form from "./Form";
+
 
 const CreateProduct = (props) => {
     const [errors, setErrors] = useState({});
     const [userId, setUserId] = useState("");
+    const navigate = useNavigate();
     const [newProduct, setNewProduct] = useState({
         title: "",
         image: "",

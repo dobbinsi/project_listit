@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import axios from "axios";
-import { Link, navigate } from "@reach/router";
+import { NavLink as Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from './Header';
+
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
+
     const login = (event) => {
         event.preventDefault();
         axios.post("http://localhost:8000/api/users/login",

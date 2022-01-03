@@ -66,7 +66,7 @@ module.exports = {
                                 });
                             } else {
                                 res.status(400).json({
-                                    message: "Login and/or Email Invalid",
+                                    message: "Invalid Login Attempt",
                                 }); 
                             }
                         })
@@ -94,7 +94,7 @@ module.exports = {
     },
 
     getOneUser: (req, res) => {
-        User.findOne({ _id: req.params.id })
+        User.findOne({ _id: req.params.userId })
             .then((oneUser) => {
                 console.log(oneUser);
                 res.json(oneUser);

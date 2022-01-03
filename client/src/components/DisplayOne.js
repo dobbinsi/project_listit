@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, navigate } from "@reach/router";
+import { useParams } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 
-const DisplayOne = (props) => {
-    const { id } = props;
+
+const DisplayOne = () => {
+    const { id } = useParams();
     const [oneProduct, setOneProduct] = useState({});
     const [userId, setUserId] = useState("");
+    const navigate = useNavigate();
     const jawn = process.env.REACT_APP_JAWN;
     // ^^ not secure but fine for this use case
 

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "@reach/router";
+import { NavLink as Link } from "react-router-dom";
 import Header from "./Header";
 
-const Register = (props) => {
+
+const Register = () => {
     const [confirmReg, setConfirmReg] = useState("");
     const [errors, setErrors] = useState({});
     const [user, setUser] = useState({
@@ -12,12 +13,14 @@ const Register = (props) => {
         password: "",
         confirmPassword: "",
     });
+    
     const handleChange = (e) => {
         setUser({
             ...user,
             [e.target.name]: e.target.value,
         });
     };
+    
     const register = (e) => {
         e.preventDefault();
         axios.post("http://localhost:8000/api/users/register", user,

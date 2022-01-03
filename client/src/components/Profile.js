@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "@reach/router";
+import { NavLink as Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Header from "./Header";
 
-const Profile = (props) => {
-    const { userId } = props;
+
+const Profile = () => {
+    const { userId } = useParams();
     const [userProductList, setUserProductList] = useState([]);
     const [oneUser, setOneUser] = useState({});
 
