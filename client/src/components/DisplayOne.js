@@ -63,7 +63,7 @@ const DisplayOne = () => {
                                 <h3 className="condition">Condition:</h3>
                                 <p>{oneProduct.condition}</p>
                                 <h3>Location:</h3>
-                                <iframe src={`https://www.google.com/maps/embed/v1/place?q=${oneProduct.location}&key=${jawn}`}></iframe>
+                                <iframe src={`https://www.google.com/maps/embed/v1/place?q=${oneProduct.location}&key=${jawn}`} title="map"></iframe>
                             </div>
                             <div>
                                 {

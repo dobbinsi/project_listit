@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-// import { Router } from '@reach/router';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import DisplayAll from './components/DisplayAll';
 import Login from './components/Login';
@@ -24,13 +23,6 @@ function App() {
           <Route exact path="/product/edit/:id" element={<EditProduct/>}></Route>
           <Route exact path="/users/:userId" element={<Profile/>}></Route>
         </Routes>
-        {/* <Login path="/" />
-        <Register path="/register" />
-        <DisplayAll path="/products/home" />
-        <CreateProduct path="/products/new" />
-        <DisplayOne path="/product/:id"/>
-        <EditProduct path="/product/edit/:id"/>
-        <Profile path="/users/:userId"/> */}
       </Router>
       <h1>Need cash? Listit!</h1>
     </div>

@@ -39,7 +39,7 @@ const DisplayAll = (props) => {
                             <div className="product-container">
                                 <div className="product-details">
                                     <Link to={`/product/${product._id}`} className="product-links">
-                                        <img src={product.image} alt="product image" className="thumbnail" />
+                                        <img src={product.image} alt="product" className="thumbnail" />
                                         <h2>{product.title}</h2>
                                     </Link>
                                     <h3>{product.categories}</h3>

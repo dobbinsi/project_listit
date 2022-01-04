@@ -35,13 +35,13 @@ const Login = () => {
     return (
         <div>
             <Header
-                linkOne={"/"}
+                linkOne={"/."}
                 textOne={"Browse Items"}
-                linkTwo={"/"}
+                linkTwo={"/."}
                 textTwo={"My Products"}
-                linkThree={"/"}
+                linkThree={"/."}
                 textThree={"New Listing"}
-                linkFour={"/"}
+                linkFour={"/."}
                 textFour={"Log Out"}
             />
             <div className="body-main">

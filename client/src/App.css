@@ -13,8 +13,7 @@ body {
 }
 
 .wrapper {
-  width: 80%;
-  min-height: 90vh;
+  width: 85%;
   margin: auto;
   padding: 30px;
   background-color: transparent
@@ -30,8 +29,6 @@ body {
 }
 
 .header-main {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 20px 0px;
   color: antiquewhite;
@@ -45,19 +42,19 @@ body {
 
 .brand-logo {
   display: flex;
+  justify-content: flex-start;
+  min-width: fit-content;
   align-items: center;
 }
 
 .navbar-logo {
   color: antiquewhite;
   justify-self: start;
-  margin-left: 20px;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
   min-width: fit-content;
 }
-
 
 .nav-menu {
   display: grid;
@@ -66,10 +63,13 @@ body {
   grid-gap: 10px;
   list-style: none;
   text-align: center;
-  width: 70vw;
-  margin-right: 2rem;
+  width: 70%;
 }
 
+.nav-item {
+  display: flex;
+  align-items: center;
+}
 
 .nav-links {
   color: antiquewhite;
@@ -85,24 +85,23 @@ body {
 }
 
 .nav-links:hover {
-  background-color: #1888ff;
-  border-radius: 4px;
+  color: #3bf39a;
   transition: all 0.2s ease-out;
 }
 
+.nav-links.active {
+  color: #3bf39a;
+  transition: all 0.2s ease-out;
+}
 
 .fa-bars {
   color: antiquewhite;
+  font-size: 2rem;
 }
 
 .fa-times {
   color: antiquewhite;
-}
-
-.nav-item {
-  display: flex;
-  align-items: center;
-  height: 80px;
+  font-size: 2rem;
 }
 
 .nav-links-mobile {
@@ -113,10 +112,37 @@ body {
   display: none;
 }
 
+@media screen and (max-width: 1136px) {
+  .header-main {
+    align-items: center;
+    color: antiquewhite;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -30px -2px 30px -20px;
+  }
+  
+  .brand-logo {
+    display: flex;
+    justify-content: flex-start;
+    min-width: fit-content;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    color: antiquewhite;
+    justify-self: start;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    min-width: fit-content;
+  }
 
-@media screen and (max-width: 960px) {
-  .NavbarItems {
-    position: relative;
+  .navbar-logo h1 {
+    margin: 5px 0px 0px -42px;
   }
 
   .nav-menu {
@@ -132,11 +158,12 @@ body {
   }
 
   .nav-menu.active {
-    background: #242222;
+    background: #292929;
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
+    margin-top: 50px;
   }
 
   .nav-links {
@@ -147,29 +174,25 @@ body {
   }
 
   .nav-links:hover {
-    background-color: #1888ff;
+    background-color: #206899;
     border-radius: 0;
   }
 
   .navbar-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
     transform: translate(25%, 50%);
   }
 
   .menu-icon {
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
+    margin-top: 25px;
     transform: translate(-100%, 60%);
-    font-size: 1.8rem;
+    font-size: 2rem;
     cursor: pointer;
+    color: antiquewhite;
   }
 
   .fa-times {
-    color: #fff;
+    color: antiquewhite;
     font-size: 2rem;
   }
 
@@ -180,30 +203,25 @@ body {
     margin: 2rem auto;
     border-radius: 4px;
     width: 80%;
-    background: #1888ff;
+    background: #206899;
     text-decoration: none;
-    color: #fff;
+    color: antiquewhite;
     font-size: 1.5rem;
   }
 
   .nav-links-mobile:hover {
-    background: #fff;
-    color: #1888ff;
+    background: #206899;
+    color: #3bf39a;
     transition: 250ms;
   }
+
+  .body-main-market {
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .body-main {
   background-color: transparent;
@@ -277,6 +295,7 @@ body {
 .hover-button:hover {
   background-color: #3bf39a;
   color: #0303a1;
+  transition: all 0.2s ease-out;
   font-size: 18px;
   font-weight: bold;
   padding: 10px;
@@ -303,7 +322,7 @@ span {
   min-height: 100vh;
   padding: 20px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   align-content: flex-start;
 }
@@ -318,7 +337,7 @@ span {
   width: 250px;
   padding: 10px;
   border-radius: 10px;
-  margin: 15px 5px;
+  margin: 15px;
 }
 
 .product-container-big {
@@ -373,8 +392,6 @@ span {
   margin-bottom: 10px;
 }
 
-
-
 .product-details {
   text-align: center;
 }
@@ -404,6 +421,7 @@ span {
 .product-buttons:hover {
   background-color: #3bf39a;
   color: #0303a1;
+  transition: all 0.2s ease-out;
   font-size: 12px;
   font-weight: bold;
   padding: 10px;
