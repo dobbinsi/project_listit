@@ -148,6 +148,7 @@ body {
   .nav-menu {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 50vh;
     position: absolute;
@@ -176,6 +177,7 @@ body {
   .nav-links:hover {
     background-color: #206899;
     border-radius: 0;
+    margin-left: 0px;
   }
 
   .navbar-logo {
