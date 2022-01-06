@@ -1,1 +1,1 @@
-Project Listit is a skinny version of Facebook Marketplace / Craigslist where users can buy and sell goods. 
+Project Listit is a skinny version of Facebook Marketplace / Craigslist where users can buy and sell goods. Full-stack CRUD application built with MongoDB, Express, React, and Node.js. Product listings utilize Google Maps Embed API to display relative location. 
